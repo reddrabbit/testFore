@@ -19,6 +19,8 @@ let weather = {
         .then((data) => this.showHourlyForecast(data));
     },
 // Add or remove data as per api documentation for the returned json response. 
+// Using object destructuring, grab all of the data necessary and put them inside of the variables
+// Variable names must reference the names as is in the returned Json 
     showWeather: function(data){
         const {name} = data;
         // Weather returns an array, so it needs to be sliced to get at the first element that holds the data needed for the operation
