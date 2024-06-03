@@ -1,0 +1,173 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    font-family: "Jost", sans-serif;
+    background: #003a66;
+    /* Background image credit: Unsplash.com's random image generator URL */
+    background-image: url('https://source.unsplash.com/1900x1200/?clouds,nature');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Nav Bar Design */
+.nav {
+overflow: hidden;
+background-color: #003a66;
+max-height: fit-content;
+}
+
+
+.nav img{
+    float: left;
+    max-height: 50px;
+    padding: 4px;
+    margin-left: 8px;
+}
+
+.nav a {
+float:right;
+color: #f2f2f2;
+text-align: center;
+padding: 12px 14px;
+text-decoration: none;
+font-size: 16px;
+}
+  
+.nav a:hover {
+ background-color: #518fd5;
+color: rgb(255, 255, 255);
+border-radius: 30px;
+}
+ 
+.nav a.active {
+background-color: #0079c1;
+color: white;
+border-radius: 30px;
+ }
+
+
+/* Container design */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+}
+/* Style the card */
+.card{
+    background: rgba(23, 26, 41, 0.548);
+    padding: 4em;
+    border-radius: 36px;
+    width: 100%;
+    max-width: 400px;
+    margin: 1em;
+    color: white;
+    border: #c3c3c336 1px solid;
+}
+
+h1.temp{
+    margin:0;
+    margin-bottom: 0.3em;
+}
+
+/* Stylig the search box */
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Button Style */
+button:hover {
+    background: WHITE;
+    color: black;
+}
+button {
+    margin: 0.5em;
+    border-radius: 50%;
+    height: 3em;
+    width: 3em;
+    border: none;
+    outline: none;
+    cursor: POINTER;
+    color: white;
+    background: #00000057;
+    transition: 0.3s ease-in-out;
+}
+/* Styling the Input */
+input.searchBar {
+    border: none;
+    outline: none;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    background: #00000057;
+    color: white;
+    font-family: inherit;
+    font-size: 100%;
+}
+
+/* Weather Report Styling */
+.description{
+    text-transform: capitalize;
+    margin-left: 8px;
+}
+
+.flexbox{
+    display: flex;
+    align-items: center;
+}
+
+
+/* Responsive Design for Smaller Screens */
+@media screen and (max-width: 768px) {
+
+    .nav {
+        width: calc(100%);
+    }
+
+    .nav img{
+        max-height: 40px;
+    }
+
+    .nav a{
+        font-size: 14px;
+    }
+
+}
+
+/* Style Hourly Forecast */
+.hourly{
+    margin-top: 50px;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hourly-item {
+    flex: 0 0 auto;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    color: white;
+}
+
+.hourly-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+#hourly-heading {
+    color: #fff;
+    margin-top: 10px;
+}
