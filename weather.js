@@ -53,12 +53,13 @@ let weather = {
             const hourTemp = Math.round(item.main.temp);
             const hourIcon = item.weather[0].icon;
             const hourIconURL = "https://openweathermap.org/img/w/" + hourIcon + ".png";
+            const desc = item.weather[0].description
 
 //Create the html elements that will hold this info
             const hourlyItemHtml = `
             <div class="hourly-item">
                 <span>${hour}:00</span>
-                <img src="${hourIconURL}" alt="Hourly Weather Icon">
+                <img src="${hourIconURL}" alt="Hourly Weather Icon" title = "${desc}">
                 <span>${hourTemp}°C</span>
             </div>
         `;
