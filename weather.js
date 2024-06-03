@@ -1,8 +1,7 @@
 // Declare a variable object that stores all functions and variables for using the API
 // Create an account on OpenWeatherMap.org {FOSS}
 let weather = {
-    // Replace the apikey parameters with your apikey from openweathermap.org
-    
+// Replace the apikey parameters with your apikey from openweathermap.org
     getWeather: function(city){
         const apiKey =  '655ec96887b13aa272a77e6d6767f70a';
         fetch('https://api.openweathermap.org/data/2.5/weather?q='
@@ -34,16 +33,18 @@ let weather = {
         document.querySelector(".wind").innerText = "Windspeed: "+ speed+" km/h";
         document.querySelector(".humidity").innerText = "Humidity: "+humidity+"%";
     },
+// Add function for hourly forecast data
     showHourlyForecast: function(Forecastdata){
         const hourlyForecast = document.querySelector(".hourly");
+// Clear the hourly forecast carousel so that the data does not append itself each time
         hourlyForecast.innerHTML = '';
-        // Get the hourly forecast from API sliced into 3 hour time windows
-        // Using the slice function, extract the first 8 items from the returned hourly data
+// Get the hourly forecast from API sliced into 3 hour time windows
+// Using the slice function, extract the first 8 items from the returned hourly data
         const forecastList = Forecastdata.list;
         const twentyFourhours = forecastList.slice(0, 8);
 
-        // Iterate over the sliced data and create HTML contents to display
-        // For each item it iterates over, it will extract relevant info for that item
+// Iterate over the sliced data and create HTML contents to display
+// For each item it iterates over, it will extract relevant info for that item
         twentyFourhours.forEach(item =>{
             const date = new Date(item.dt * 1000);
             const hour = date.getHours();
@@ -51,7 +52,7 @@ let weather = {
             const hourIcon = item.weather[0].icon;
             const hourIconURL = "https://openweathermap.org/img/w/" + hourIcon + ".png";
 
-            //Create the html elements that will hold this info
+//Create the html elements that will hold this info
             const hourlyItemHtml = `
             <div class="hourly-item">
                 <span>${hour}:00</span>
@@ -65,7 +66,7 @@ let weather = {
             
         });
     },
-    // Set up the searchbar function to pass the value entered into it to the getweather function
+// Set up the searchbar function to pass the value entered into it to the getweather function
     search: function(){
         this.getWeather(document.querySelector(".searchBar").value);
     }
