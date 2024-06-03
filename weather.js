@@ -36,6 +36,7 @@ let weather = {
     },
     showHourlyForecast: function(Forecastdata){
         const hourlyForecast = document.querySelector(".hourly");
+        hourlyForecast.innerHTML = '';
         // Get the hourly forecast from API sliced into 3 hour time windows
         // Using the slice function, extract the first 8 items from the returned hourly data
         const forecastList = Forecastdata.list;
